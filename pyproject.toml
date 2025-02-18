@@ -1,0 +1,45 @@
+[project]
+name = "rescue-mosaik"
+description = "RESCUE simulator using mosaik co-simulation framework"
+readme = 'README.md'
+license = "Apache-2.0"
+dynamic = ["version"]
+authors = [
+    { name = "Stefan Verhoeven", email = "s.verhoeven@esciencecenter.nl" }
+]
+requires-python = ">=3.12"
+keywords = ["mosaik", "rescue", "co-simulation"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Environment :: Console",
+    "Environment :: Web Environment", # TODO add dashboard
+    "Programming Language :: Python",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Utilities",
+    "Topic :: Scientific/Engineering",
+    "License :: OSI Approved :: Apache Software License"
+]
+dependencies = [
+    "mosaik>=3.4.0",
+]
+
+[project.scripts]
+rescue-mosaik = "rescue_mosaik:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "ruff>=0.9.6",
+]
+
+[tool.hatch.version]
+path = "src/rescue_mosaik/__version__.py"
+
+# TODO add more ruff rules
