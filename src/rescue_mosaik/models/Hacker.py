@@ -26,9 +26,9 @@ class Hacker:
         self.dispatcher = dispatcher
 
     def step(self, time: int):
-        if time == 5:
+        if time == 2:
             self.dispatcher(PortScanEvent(1))
-        if time == 10:
+        if time == 4:
             self.dispatcher(StartDDOSEvent(1))
-        if time == 50:
+        if time == 6:
             self.dispatcher(StopDDOSEvent(1))

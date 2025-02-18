@@ -17,6 +17,7 @@ def test_zero_events():
     )
     assert grid.state == expected
 
+
 def test_portscan_on_first_switch():
     grid = Grid()
     grid.step(0, [PortScanEvent(0)])
@@ -29,6 +30,7 @@ def test_portscan_on_first_switch():
         ],
     )
     assert grid.state == expected
+
 
 def test_ddos_on_first_switch():
     grid = Grid()
@@ -57,6 +59,7 @@ def test_bypass_on_first_switch():
     )
     assert grid.state == expected
 
+
 def test_bypass_and_ddos_on_first_switch():
     grid = Grid()
     grid.step(0, [StartByPassEvent(0), StartDDOSEvent(0)])
@@ -69,6 +72,7 @@ def test_bypass_and_ddos_on_first_switch():
         ],
     )
     assert grid.state == expected
+
 
 def test_given_bypass_and_toggle_ddos_on_first_switch():
     grid = Grid()

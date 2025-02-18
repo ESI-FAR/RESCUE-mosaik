@@ -23,6 +23,7 @@ classifiers = [
     "License :: OSI Approved :: Apache Software License"
 ]
 dependencies = [
+    "matplotlib>=3.10.0",
     "mosaik>=3.4.0",
 ]
 
@@ -35,6 +36,7 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
+    "mypy>=1.15.0",
     "pytest>=8.3.4",
     "ruff>=0.9.6",
 ]
