@@ -1,12 +1,15 @@
 # RESCUE mosaik
 
-Simulator for RESCUE project using mosaik as co-simulation framework.
+> [!NOTE]
+> This is a personal experiment by @sverhoeven to learn the [mosaik framework](https://mosaik.readthedocs.io/) by applying it to a scenario, made up by me, in the world of the [RESCUE project](https://research-software-directory.org/projects/rescue).
+
+Simulator for [RESCUE project](https://research-software-directory.org/projects/rescue) using [mosaik](https://gitlab.com/mosaik/mosaik) as co-simulation framework.
 
 ## World
 
 Given a grid simulation with a power provider and consumer.
 Between the provider and consumer there are 2 switches called switch1 and switch2.
-The provider produces 1 unit of power and the consumer needs 1 unit of power.
+The provider produces 100 units of power and the consumer needs 100 units of power.
 Each switch will divide the power equally.
 
 A switch can be in 3 modes:
