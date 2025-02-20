@@ -7,7 +7,7 @@ from mosaik.util import (
 
 
 def main() -> None:
-    debug = False
+    debug = True
     world = World(
         {
             "GridSimulator": {
@@ -33,8 +33,9 @@ def main() -> None:
     hacker = hacker_sim.Hacker()
 
     world.connect(grid, guard, "grid_state", "grid_state")
-    world.connect(guard, grid, "events", "events", weak=True)
-    world.connect(hacker, grid, "events", "events")
+    world.connect_one
+    world.connect(guard, grid, "events", "events", time_shifted=True)
+    world.connect(hacker, grid, "events", "events", time_shifted=True)
 
     world.run(until=10)
 

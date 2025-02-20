@@ -50,10 +50,6 @@ class GridSimulator(Simulator):
         # TODO Convert inputs to the format that the model expects
         # GridSimulator.step(time=5, inputs={'Grid_0': {'events': {'HackerSimulator-0.Hacker_0': [PortScanEvent(switch=1)]}}}, max_advance=4)
         logger.error(f"GridSimulator.step({time=}, {inputs=}, {max_advance=})")
-        # TODO step is run for guard and hacker, should only run once per time step
-        # GridSimulator.step(time=7, inputs={'Grid_0': {'events': {'HackerSimulator-0.Hacker_0': []}}}, max_advance=6)
-        # GridSimulator.step(time=7, inputs={'Grid_0': {'events': {'GuardSimulator-0.Guard_0': []}}}, max_advance=7)
-
         events: list[Event] = []
         if "Grid_0" in inputs:
             other_events = cast(dict[str, list[Event]], inputs["Grid_0"]["events"])
