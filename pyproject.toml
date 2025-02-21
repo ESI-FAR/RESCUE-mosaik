@@ -45,3 +45,63 @@ dev = [
 path = "src/rescue_mosaik/__version__.py"
 
 # TODO add more ruff rules
+[tool.ruff]
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "A",
+    # TODO enable ANN and make code more typed
+    # "ANN",
+    "ARG",
+    "B",
+    "BLE",
+    "C",
+    # TODO document everything
+    # "D",
+    "DTZ",
+    "E",
+    "EM",
+    "ERA",
+    "F",
+    # TODO enable FBT and factor out booleans args to seperate functions
+    # "FBT",
+    "FURB",
+    "I",
+    "ICN",
+    "ISC",
+    "LOG",
+    "N",
+    # TODO enable NPT and use modern random
+    # "NPY",
+    "PD",
+    "PERF",
+    "PGH",
+    "PLC",
+    "PLE",
+    # TODO enable PLR and make code less complex
+    # "PLR",
+    # TODO enable PT for tests/**
+    # "PT",
+    "PTH",
+    "PLW",
+    "Q",
+    "RET",
+    "RSE",
+    "RUF",
+    "S",
+    "SLOT",
+    "SIM",
+    "T",
+    "TCH",
+    "TID",
+    "TRY",
+    "UP",
+    "W",
+    "YTT"
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*" = [
+    "ARG", "ANN", "D", "E501", "DTZ001", "N802", "S101", "S108", "PLR2004"
+]
