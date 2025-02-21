@@ -63,10 +63,10 @@ class GuardSimulator(Simulator):
         return time + 1
 
     def get_data(self, outputs: OutputRequest) -> OutputData:
-        if len(self.listener.events) > 0:
-            logger.error(
-                f"GuardSimulator.get_data({outputs=}, {self.listener.events=})"
-            )
+        # if len(self.listener.events) > 0:
+        #     logger.error(
+        #         f"GuardSimulator.get_data({outputs=}, {self.listener.events=})"
+        #     )
         return {
             "Guard_0": {
                 "events": self.listener.events,

@@ -47,21 +47,21 @@ class GridSimulator(Simulator):
         return [result]
 
     def step(self, time: int, inputs: InputData, max_advance: int) -> int:
-        # TODO Convert inputs to the format that the model expects
-        # GridSimulator.step(time=5, inputs={'Grid_0': {'events': {'HackerSimulator-0.Hacker_0': [PortScanEvent(switch=1)]}}}, max_advance=4)
-        logger.error(f"GridSimulator.step({time=}, {inputs=}, {max_advance=})")
+        # Convert inputs to the format that the model expects
         events: list[Event] = []
         if "Grid_0" in inputs:
             other_events = cast(dict[str, list[Event]], inputs["Grid_0"]["events"])
             for event in other_events.values():
                 events.extend(event)
 
+        logger.error(
+            f"GridSimulator.step({time=} consumed_power={self.model.state.consumed_power} switch1={self.model.state.switches[1]} {events=})"
+        )
+
         self.model.step(time, events)
         return time + 1
 
     def get_data(self, outputs: OutputRequest) -> OutputData:
-        # TODO only return what is requested in outputs
-        # logger.error(f"GridSimulator.get_data({self.model.state=})")
         return {
             "Grid_0": {
                 "grid_state": self.model.state,

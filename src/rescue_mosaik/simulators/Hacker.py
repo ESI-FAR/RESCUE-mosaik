@@ -55,10 +55,10 @@ class HackerSimulator(Simulator):
         return time + 1
 
     def get_data(self, outputs):
-        if len(self.listener.events) > 0:
-            logger.error(
-                f"HackerSimulator.get_data({outputs=}, {self.listener.events=})"
-            )
+        # if len(self.listener.events) > 0:
+        #     logger.error(
+        #         f"HackerSimulator.get_data({outputs=}, {self.listener.events=})"
+        #     )
         return {
             "Hacker_0": {
                 "events": self.listener.events,

@@ -33,11 +33,11 @@ def main() -> None:
     hacker = hacker_sim.Hacker()
 
     world.connect(grid, guard, "grid_state", "grid_state")
-    world.connect_one
+    # Comment out next line to give hacker free reign
     world.connect(guard, grid, "events", "events", time_shifted=True)
     world.connect(hacker, grid, "events", "events", time_shifted=True)
 
-    world.run(until=10)
+    world.run(until=14)
 
     if debug:
         plot_execution_graph(world, folder=".")

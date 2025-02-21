@@ -71,37 +71,28 @@ rescue-mosaik
       \      /            Docs: https://mosaik.readthedocs.io/en/3.4.0/
        \____/     Get in touch: https://github.com/orgs/OFFIS-mosaik/discussions
 
-2025-02-18 15:47:24.051 | INFO     | mosaik.async_scenario:start:361 - Starting "GridSimulator" as "GridSimulator-0" ...
-2025-02-18 15:47:24.053 | INFO     | mosaik.async_scenario:start:361 - Starting "GuardSimulator" as "GuardSimulator-0" ...
-2025-02-18 15:47:24.054 | INFO     | mosaik.async_scenario:start:361 - Starting "HackerSimulator" as "HackerSimulator-0" ...
-2025-02-18 15:47:24.055 | INFO     | mosaik.async_scenario:run:697 - Starting simulation.
-  0%|                                                                                                                                                                                                           | 0/10 [00:00<?, ?steps/s]GridSimulator.step(time=0, inputs={'Grid_0': {'events': {'HackerSimulator-0.Hacker_0': []}}}, max_advance=-1)
-GridSimulator.step(time=0, inputs={'Grid_0': {'events': {'GuardSimulator-0.Guard_0': []}}}, max_advance=0)
-GridSimulator.step(time=1, inputs={'Grid_0': {'events': {'HackerSimulator-0.Hacker_0': []}}}, max_advance=0)
-GridSimulator.step(time=1, inputs={'Grid_0': {'events': {'GuardSimulator-0.Guard_0': []}}}, max_advance=1)
-HackerSimulator.get_data(outputs={'Hacker_0': ['events']}, self.listener.events=[PortScanEvent(switch=1)])
-GridSimulator.step(time=2, inputs={'Grid_0': {'events': {'HackerSimulator-0.Hacker_0': [PortScanEvent(switch=1)]}}}, max_advance=1)
-GuardSimulator.get_data(outputs={'Guard_0': ['events']}, self.listener.events=[StartByPassEvent(switch=1)])
-GridSimulator.step(time=2, inputs={'Grid_0': {'events': {'GuardSimulator-0.Guard_0': [StartByPassEvent(switch=1)]}}}, max_advance=2)
-GridSimulator.step(time=3, inputs={'Grid_0': {'events': {'HackerSimulator-0.Hacker_0': []}}}, max_advance=2)
-GridSimulator.step(time=3, inputs={'Grid_0': {'events': {'GuardSimulator-0.Guard_0': []}}}, max_advance=3)
-HackerSimulator.get_data(outputs={'Hacker_0': ['events']}, self.listener.events=[StartDDOSEvent(switch=1)])
-GridSimulator.step(time=4, inputs={'Grid_0': {'events': {'HackerSimulator-0.Hacker_0': [StartDDOSEvent(switch=1)]}}}, max_advance=3)
-GridSimulator.step(time=4, inputs={'Grid_0': {'events': {'GuardSimulator-0.Guard_0': []}}}, max_advance=4)
-GridSimulator.step(time=5, inputs={'Grid_0': {'events': {'HackerSimulator-0.Hacker_0': []}}}, max_advance=4)
-GridSimulator.step(time=5, inputs={'Grid_0': {'events': {'GuardSimulator-0.Guard_0': []}}}, max_advance=5)
-HackerSimulator.get_data(outputs={'Hacker_0': ['events']}, self.listener.events=[StopDDOSEvent(switch=1)])
-GridSimulator.step(time=6, inputs={'Grid_0': {'events': {'HackerSimulator-0.Hacker_0': [StopDDOSEvent(switch=1)]}}}, max_advance=5)
-GuardSimulator.get_data(outputs={'Guard_0': ['events']}, self.listener.events=[StopByPassEvent(switch=1)])
-GridSimulator.step(time=6, inputs={'Grid_0': {'events': {'GuardSimulator-0.Guard_0': [StopByPassEvent(switch=1)]}}}, max_advance=6)
-GridSimulator.step(time=7, inputs={'Grid_0': {'events': {'HackerSimulator-0.Hacker_0': []}}}, max_advance=6)
-GridSimulator.step(time=7, inputs={'Grid_0': {'events': {'GuardSimulator-0.Guard_0': []}}}, max_advance=7)
-GridSimulator.step(time=8, inputs={'Grid_0': {'events': {'HackerSimulator-0.Hacker_0': []}}}, max_advance=7)
-GridSimulator.step(time=8, inputs={'Grid_0': {'events': {'GuardSimulator-0.Guard_0': []}}}, max_advance=8)
-GridSimulator.step(time=9, inputs={'Grid_0': {'events': {'HackerSimulator-0.Hacker_0': []}}}, max_advance=8)
-GridSimulator.step(time=9, inputs={'Grid_0': {'events': {'GuardSimulator-0.Guard_0': []}}}, max_advance=10)
-100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:00<00:00, 1733.90steps/s]
-2025-02-18 15:47:24.063 | INFO     | mosaik.async_scenario:run:753 - Simulation finished successfully.
+2025-02-21 08:44:59.765 | WARNING  | mosaik.async_scenario:__init__:311 - You are running your simulation in debug mode. This can lead to significant slow-downs, as it will create a graph of the entire execution. Only use this mode if you intend to analyze the execution graph afterwards.
+2025-02-21 08:44:59.765 | INFO     | mosaik.async_scenario:start:361 - Starting "GridSimulator" as "GridSimulator-0" ...
+2025-02-21 08:44:59.767 | INFO     | mosaik.async_scenario:start:361 - Starting "GuardSimulator" as "GuardSimulator-0" ...
+2025-02-21 08:44:59.768 | INFO     | mosaik.async_scenario:start:361 - Starting "HackerSimulator" as "HackerSimulator-0" ...
+2025-02-21 08:44:59.770 | INFO     | mosaik.async_scenario:run:697 - Starting simulation.
+  0%|                                                                                                                                                                                                                                           | 0/14 [00:00<?, ?steps/s]
+GridSimulator.step(time=0 consumed_power=100 switch1=Switch(power=50, portscan=False, ddos=False, bypassed=False) events=[])
+GridSimulator.step(time=1 consumed_power=100.0 switch1=Switch(power=50.0, portscan=False, ddos=False, bypassed=False) events=[])
+GridSimulator.step(time=2 consumed_power=100.0 switch1=Switch(power=50.0, portscan=False, ddos=False, bypassed=False) events=[])
+GridSimulator.step(time=3 consumed_power=100.0 switch1=Switch(power=50.0, portscan=False, ddos=False, bypassed=False) events=[PortScanEvent(switch=1)])
+GridSimulator.step(time=4 consumed_power=100.0 switch1=Switch(power=50.0, portscan=True, ddos=False, bypassed=False) events=[StartByPassEvent(switch=1)])
+GridSimulator.step(time=5 consumed_power=100.0 switch1=Switch(power=0, portscan=False, ddos=False, bypassed=True) events=[])
+GridSimulator.step(time=6 consumed_power=100.0 switch1=Switch(power=0, portscan=False, ddos=False, bypassed=True) events=[])
+GridSimulator.step(time=7 consumed_power=100.0 switch1=Switch(power=0, portscan=False, ddos=False, bypassed=True) events=[StartDDOSEvent(switch=1)])
+GridSimulator.step(time=8 consumed_power=100.0 switch1=Switch(power=0, portscan=False, ddos=True, bypassed=True) events=[])
+GridSimulator.step(time=9 consumed_power=100.0 switch1=Switch(power=0, portscan=False, ddos=True, bypassed=True) events=[])
+GridSimulator.step(time=10 consumed_power=100.0 switch1=Switch(power=0, portscan=False, ddos=True, bypassed=True) events=[])
+GridSimulator.step(time=11 consumed_power=100.0 switch1=Switch(power=0, portscan=False, ddos=True, bypassed=True) events=[StopDDOSEvent(switch=1)])
+GridSimulator.step(time=12 consumed_power=100.0 switch1=Switch(power=0, portscan=False, ddos=False, bypassed=True) events=[StopByPassEvent(switch=1)])
+GridSimulator.step(time=13 consumed_power=100.0 switch1=Switch(power=50.0, portscan=False, ddos=False, bypassed=False) events=[])
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 14/14 [00:00<00:00, 2057.40steps/s]
+2025-02-21 08:44:59.778 | INFO     | mosaik.async_scenario:run:753 - Simulation finished successfully.
 ```
 
 </details>
